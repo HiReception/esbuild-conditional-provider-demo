@@ -8,9 +8,11 @@ import { OptionOneService } from './option-one.service';
 import { OptionThreeService } from './option-three.service';
 import { OptionTwoService } from './option-two.service';
 
+const service: string = "two";
+
 function setService(): any {
-  if (environment.service === "one") return OptionOneService;
-  if (environment.service === "two") return OptionTwoService;
+  if (service === "one") return OptionOneService;
+  if (service === "two") return OptionTwoService;
   return OptionThreeService;
 }
 
