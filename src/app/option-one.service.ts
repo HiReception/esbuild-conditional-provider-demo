@@ -6,4 +6,6 @@ import { Injectable } from '@angular/core';
 export class OptionOneService {
 
   constructor() { }
+  
+  public optionText = "This is Option One.";
 }
