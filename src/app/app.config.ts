@@ -8,7 +8,7 @@ import { OptionOneService } from './option-one.service';
 import { OptionThreeService } from './option-three.service';
 import { OptionTwoService } from './option-two.service';
 
-// const service: string = "two";
+const service: string = "one";
 
 // function setService(): any {
 //   if (service === "one") return OptionOneService;
@@ -21,6 +21,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    { provide: OptionOneService, useClass: OptionOneService},
+    service === "one" ? OptionOneService : { provide: OptionOneService, useClass: OptionTwoService},
   ]
 };
